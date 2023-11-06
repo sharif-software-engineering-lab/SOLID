@@ -29,11 +29,7 @@ public class Main {
     private static void payPrice(OrderService orderService, Order order) {
         //Step3 : pay price
         System.out.println("Pay Price:");
-        if(orderService instanceof OnlineOrderService){
-            orderService.onlineOrderPayment(order.getTotalPrice());
-        } else if(orderService instanceof OnSiteOrderService){
-            orderService.onSiteOrderPayment(order.getTotalPrice());
-        }
+        orderService.payment(order.getTotalPrice());
     }
 
     private static OrderService getOrderService(Scanner scanner, OrderService orderService, String customerName) {
@@ -43,11 +39,10 @@ public class Main {
         customerAnswerForPaymentMethod = scanner.nextInt();
         if(customerAnswerForPaymentMethod==1){
             orderService = new OnlineOrderService();
-            orderService.onlineOrderRegister(customerName);
         } else if(customerAnswerForPaymentMethod==2){
             orderService = new OnSiteOrderService();
-            orderService.onSiteOrderRegister(customerName);
         }
+        orderService.register(customerName);
         return orderService;
     }
 
