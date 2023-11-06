@@ -32,14 +32,14 @@ Introduction to Object-Oriented Principles
 <p><strong>موارد تحقق</strong></p>
 </td>
 <td width="454">
----
+کلاس Food، Order و پکیج PaymentService
 </td></tr>
 <tr>
 <td>
 <p><strong>موارد نقض</strong></p>
 </td>
 <td>
----
+این اصل در تابع main نقض شده است
 </td></tr>
 <tr>
 <td rowspan="2">
@@ -50,14 +50,14 @@ Introduction to Object-Oriented Principles
 <p><strong>موارد تحقق</strong></p>
 </td>
 <td>
----
+موارد خاص دیگری باقی نمیماند که به این اصل نیاز باشد
 </td></tr>
 <tr>
 <td>
 <p><strong>موارد نقض</strong></p>
 </td>
 <td>
----
+این اصل به طور جدی در پیاده‌سازی PaymentServices نقض شده است 
 </td></tr>
 <tr>
 <td rowspan="2">
@@ -68,14 +68,14 @@ Introduction to Object-Oriented Principles
 <p><strong>موارد تحقق</strong></p>
 </td>
 <td>
----
+این اصل در واسط OrderService تحقق یافته است
 </td></tr>
 <tr>
 <td>
 <p><strong>موارد نقض</strong></p>
 </td>
 <td>
----
+مورد نقضی وجود ندارد 
 </td></tr>
 <tr>
 <td rowspan="2">
@@ -86,14 +86,14 @@ Introduction to Object-Oriented Principles
 <p><strong>موارد تحقق</strong></p>
 </td>
 <td>
----
+جای دیگر از واسط استفاده نشده
 </td></tr>
 <tr>
 <td>
 <p><strong>موارد نقض</strong></p>
 </td>
 <td>
----
+در واسط OrderService به صورت جدی نقض شده است
 </td></tr>
 <tr>
 <td rowspan="2">
@@ -104,14 +104,14 @@ Introduction to Object-Oriented Principles
 <p><strong>موارد تحقق</strong></p>
 </td>
 <td>
----
+رابطه کلاس Main و OrderService
 </td></tr>
 <tr>
 <td>
 <p><strong>موارد نقض</strong></p>
 </td>
 <td>
----
+مورد نقضی وجود ندارد
 </td></tr>
 </tbody>
 </table>
@@ -122,7 +122,9 @@ Introduction to Object-Oriented Principles
 
 | اصل مربوطه (از اصول SOLID) | علت نقض | راه حل پیشنهادی |
 | - | - | - |
-| ش | ش | ش |
+| تک مسئولیتی | کارهای متعددی در تابع main انجام می‌شود | باید هر کدام از این کارها در توابع جدا انجام شوند و در تابع main صدا زده شوند |
+| اصل OCP | برای اضافه کردن پیاده‌سازی جدید به رابط OrderService نیاز به تغییر خود تابع هست | تابع‌های وابسطه به کلاس از اینترفیس خارج شوند |
+| اصل ISP | کلاس‌هایی که رابط OrderService را پیاده‌سازی می‌کنند مجبور به پیاده‌سازی توابعی هستند که استفاده نمی‌کنند | توابع عمومی در رابط قرار گیرند |
 
 ## گام ۳: اصلاح موارد نقض
 
