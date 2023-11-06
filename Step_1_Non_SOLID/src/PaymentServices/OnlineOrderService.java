@@ -21,4 +21,14 @@ public class OnlineOrderService implements OrderService {
         System.out.println("online Payment with Price : " + foodPrice + " Tomans!");
     }
 
+    @Override
+    public void phoneOrderRegister(String customerName) {
+
+    }
+
+    @Override
+    public void phoneOrderPayment(int foodPrice) {
+
+    }
+
 }
